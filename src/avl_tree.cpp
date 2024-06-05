@@ -5,6 +5,20 @@
 
 avl_tree::avl_tree() {root = nullptr;}
 
+avl_tree::~avl_tree() {
+    delete_tree_helper(root);
+}
+
+void avl_tree::delete_tree_helper(node* traversal_node) {
+    if (traversal_node != nullptr) {
+        delete_tree_helper(traversal_node->left);
+        delete_tree_helper(traversal_node->right);
+
+        delete traversal_node;
+        traversal_node = nullptr;
+    }
+}
+
 void avl_tree::rightRotate(node* rotation_node) {
     //     a <- rotation_node
     //    /  

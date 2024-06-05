@@ -6,7 +6,7 @@
 //      Initializes an empty AVL tree
 //
 //  ~avl_tree()
-//      Deletes entire tree
+//      Deletes entire tree (see delete_tree_helper() function)
 //
 // MUTATORS:
 //  void rightRotate(node* rotation_node)
@@ -26,6 +26,9 @@
 //
 //  void delete_key_helper(int node_key, node* previous_node, node* search_node)
 //      Deletes a node from the tree that matches the key provided; recursive
+//
+//  void delete_tree_helper(node* traversal_node)
+//      Recursively deletes each node in the tree by postorder traversal
 //
 //  void rebalance_node(node* unbalanced node)
 //      Rebalances a node based on the height of its subtrees. Nodes in an AVL
@@ -93,6 +96,7 @@ class avl_tree {
         void update_height(node* in_node);
         void insert_node_helper(node* insertion_node, node* previous_node, node* search_node);
         void delete_key_helper(int node_key, node* previous_node, node* search_node);
+        void delete_tree_helper(node* traversal_node);
 
         // print
         void print_tree();
