@@ -63,7 +63,7 @@ struct node {
     node* left;
     node* right;
     node* parent;
-    int height = 0;
+    int height;
 
     node(int key_in = 0, int height_in = 0, node* left_in = nullptr, node* right_in = nullptr) : key(key_in), left(left_in), right(right_in), height(height_in) {}
 };
