@@ -41,6 +41,10 @@
 //      function returns the largest of the two values passed into it
 //
 // ACCESSORS:
+//  node* search(int key)
+//      Iteratively searches for a node with a key that matches the key passed
+//      into the function
+//
 //  void insert_node(node* insertion_node)
 //      Inserts a node into the tree with the help of a helper function (see
 //      insert_node_helper() function)
@@ -90,6 +94,7 @@ class avl_tree {
         // search
         node* successor_node(node* in_node);
         node* predecessor_node(node* in_node);
+        node* search(int key);
 
         // helper functions
         void rebalance_node(node* unbalanced_node);

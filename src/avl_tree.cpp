@@ -301,6 +301,21 @@ node* avl_tree::predecessor_node(node* in_node) {
     return nullptr;
 }
 
+node* avl_tree::search(int key) {
+    node* traversal_node = root;
+
+    while (traversal_node != nullptr) {
+        if (traversal_node->key == key) {
+            return traversal_node;
+        }
+        else {
+            traversal_node = (key < traversal_node->key) ? traversal_node->left : traversal_node->right;
+        }
+    }
+
+    return nullptr;
+}
+
 void avl_tree::update_height(node* in_node) {
     int left_height = (in_node->left == nullptr) ? 0 : in_node->left->height;
     int right_height = (in_node->right == nullptr) ? 0 : in_node->right->height;
